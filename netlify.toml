@@ -1,0 +1,12 @@
+# Static qgis2web (Leaflet) map export — no build step or dependencies.
+[build]
+  publish = "."
+  command = ""
+
+# The map page lives at css/index.html, but its asset paths (css/, js/, data/)
+# are relative to the repository root. Rewrite (not redirect) "/" to that page
+# so the browser URL stays at the root and the relative assets resolve.
+[[redirects]]
+  from = "/"
+  to = "/css/index.html"
+  status = 200
